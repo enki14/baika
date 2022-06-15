@@ -1,0 +1,458 @@
+$layout-widht-inner: 910px;
+
+// mixinでメディアクエリを管理する
+$breakpoint: (
+    sp: 'screen and (max-width: 550px)',
+    tab: 'screen and (max-width: #{$layout-widht-inner - 1px})',
+    pc: 'screen and (mix-width: #{$layout-widht-inner})'
+);
+
+// $bpは$breakpointのそれぞれのキーを示している
+// map-get関数でマップの値を取得する
+@mixin mq($bp){
+    @media #{map-get($breakpoint, $bp)} {
+        @content;
+    }
+}
+
+
+@mixin clearfix{
+    &::after{
+        content: '';
+        display: block;
+        clear: both
+    }
+}
+
+// テーブルレイアウトで要素を横並び
+@mixin table_layout($margin: 0, $width: 100%){
+    display: table;
+    margin: 0 auto;
+    width: #{$width};
+    border-collapse: collapse;
+    // 「 > *{} 」直下の要素全てという意味
+    > *{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 #{$margin / 2}px;
+        &:first-child{
+            padding-left: 0;
+        }
+        &:last-child{
+            padding-right: 0;
+        }
+    }
+}
+
+@mixin font_pattern($size: 14px, $color: #666, $weight: 500){
+    font-size: #{$size};
+    color: #{$color};
+    font-weight: #{$weight};
+}
+
+@mixin btn_pattern($width: 100%, $padding: 20px 30px, $background: blue, $radius: 5px){
+    padding: #{$padding};
+    background: #{$background};
+    border-radius: #{$radius};
+    text-align: center;
+    width: #{$width};
+}
+
+@mixin background_url($file: '', $width: '', $height: '', $repeat: no-repeat){
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: #{$width};
+    height: #{$height};
+    background: url('../images/#{$file}');
+    background-repeat: #{$repeat};
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+}
+
+
+body{
+    min-width: 1260px;
+    margin: 0;
+    color: #333;
+    line-height: 2.2;
+
+    header{
+
+        a{
+            width: 100%;
+            text-align: right;
+            color: #333;
+            display: block;
+
+            img{
+                padding-right: 0.5rem;
+            }
+        }
+
+        .header_nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 3rem 3.5rem;
+
+            .baika_logo{
+                padding: 0;
+
+                img{
+                    float: left;
+                    background-size: cover;
+                }
+
+                .baikaLogo_1{
+                    width: 185px;
+                    height: auto;
+                    padding-right: 1.5rem;
+                }
+                .baikaLogo_2{
+                    width: auto;
+                    height: 45px;
+                    padding-top: 0.5rem;
+                    padding-right: 2.5rem;
+                }
+            }
+
+            nav{
+                width: 70%;
+
+                ul{
+                    list-style: none;
+                    @include table_layout(30, 100%);
+
+                    li{
+                        padding-top: 2rem;
+
+                        a{
+                            text-decoration: none;
+                            @include font_pattern(1.3rem, #333, 700);
+                        }
+                    }
+                }
+            } 
+        }
+
+        .img_top{
+            width: 100%;
+            position: relative;
+            min-height: 470px;
+
+            .header-img{
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat 50% 0;
+            }
+
+            .upper_layer{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+
+                .upLayer_rela{
+                    margin: 0 auto;
+                    width: 1200px;
+                    height: 100%;
+                    overflow: visible;
+
+                    .magazine{
+                        float: left;
+                        padding-left: 500px;
+                        padding-top: 100px;
+                    }
+                    .umehana{
+                        float: left;
+                        padding-left: 50px;
+                        padding-top: 150px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    main{
+        padding: 0;
+        margin: 10rem 0 0;
+
+        h2{
+            width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+        }
+
+        section{
+            position: relative;
+            margin: 7rem 0 0;
+            display: block;
+            height: 600px;
+
+            .sub_sec{
+                width: 1200px;
+                height: 100%;
+                margin: 0 auto;
+                position: relative;
+
+                .img_stn{
+                    position: relative;
+                    float: left;
+                }
+
+                .side_stn{
+                    position: relative;
+                    float: left;
+                    height: 100%;
+
+                    article{
+                        position: relative;
+                        border: 1px dashed #333;
+                        padding: 2rem 3rem;
+                        text-align: center;
+
+                        h4 .five_point{
+                            margin-bottom: 1.5rem;
+                           
+                        }
+
+                        p{
+                            font-size: 1.3rem;
+                            text-align: center;
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+        .section_1{
+
+            &::after{
+                @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+                bottom: -4.5rem;
+                // left:50%のところから右に向かって繰り返すという意味
+                left: 50%;
+                z-index: 2;
+                margin-left: 42rem;
+            }
+
+            .sub_sec{
+
+                &::before{
+                    @include background_url('pc/bakai_number01_pc.png', 133px, 133px, no-repeat);
+                    background-size: cover;
+                    top: -3rem;
+                    left: 49.5%;
+                }
+
+                .img_stn{
+
+                    &::after{
+                        @include background_url('pc/bakai_leg01_pc.png', 105px, 244px, no-repeat);
+                        bottom: -10rem;
+                        left: 2.5rem;
+                    }
+                }
+                .side_stn{
+
+                    &::after{
+                        @include background_url('pc/garden_herewego_pc.png', 216px, 102px, no-repeat);
+                        left: 2.5rem;
+                        bottom: 4.5rem;
+                        z-index: 3;
+                    }
+
+                    .garden_h{
+                        padding-top: 6rem;
+                        padding-left: 7rem;
+                    }
+
+                    article{
+                        margin-left: 9rem;
+                        margin-top: 3.5rem;
+                        margin-right: 4.5rem;
+
+
+                        &::before{
+                            @include background_url('pc/garden_flower_pc.png', 40px, 56px, no-repeat);
+                            top: -3rem;
+                            left: -3rem;
+                            z-index: 3;
+                        }
+
+                        &::after{
+                            @include background_url('pc/bakai_dog01_pc.png', 115px, 213px, no-repeat);
+                            top: 18.5rem;
+                            right: -8rem;
+                            z-index: 3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_2{
+
+            &::after{
+                @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+                bottom: -3rem;
+                right: 50%;
+                z-index: 2;
+                margin-right: 42rem;
+            }
+
+
+            .sub_sec{
+                top: -3rem;
+
+                &::before{
+                    @include background_url('pc/bakai_number02_pc.png', 133px, 133px, no-repeat);
+                    left: 41.5%;
+                    top: -2rem;
+                    z-index: 3;
+                }
+
+                .img_stn{
+                    padding-left: 5rem;
+
+                    &::after{
+                        @include background_url('pc/bakai_leg02_pc.png', 102px, 235px, no-repeat);
+                        bottom: -10rem;
+                        right: 7.5rem;
+                    }
+
+
+                    img{
+                        padding-top: 4rem;
+                    }
+                }
+                
+                .side_stn{
+                    padding-left: 2.5rem;
+
+                    &::after{
+                        @include background_url('pc/facility_enjoy_pc.png', 322px, 103px, no-repeat);
+                        right: -3rem;
+                        bottom: -3rem;
+                        z-index: 3;
+                    }
+
+                    .campus_h{
+                        padding-left: 7rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    article{
+                        &::before{
+                            @include background_url('pc/facility_flower_pc.png', 53px, 44px, no-repeat);
+                            top: -2.5rem;
+                            left: -2.5rem;
+                            z-index: 3;
+                        }
+
+                        &::after{
+                            @include background_url('pc/bakai_dog02_pc.png', 115px, 213px, no-repeat);
+                            top: 18rem;
+                            left: -5rem;
+                            z-index: 3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section_3{
+            margin-top: 11rem;
+
+            &::after{
+                @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+                bottom: 2rem;
+                // left:50%のところから右に向かって繰り返すという意味
+                left: 50%;
+                z-index: 2;
+                margin-left: 42rem;
+            }
+
+            .sub_sec{
+
+                &::before{
+                    @include background_url('pc/bakai_number03_pc.png', 133px, 133px, no-repeat);
+                    left: 10%;
+                    top: -1.5rem;
+                    z-index: 3;
+                }
+
+                .img_stn{
+                    top: 4rem;
+                    left: -6rem;
+
+                    &::before{
+                        @include background_url('pc/cafeteria_cat_pc.png', 226px, 90px, no-repeat);
+                        top: 0rem;
+                        right: -6rem;
+                    }
+
+                    &::after{
+                        @include background_url('pc/bakai_leg03_pc.png', 108px, 171px, no-repeat);
+                        bottom: -18rem;
+                        left: 11rem;
+                    }
+                }
+
+                .side_stn{
+                    text-align: center;
+
+                    .cafe_h{
+                        margin-bottom: 3rem;
+
+                    }
+
+                    article{
+                        &::before{
+                            @include background_url('pc/cafeteria_flower_pc.png', 39px, 111px, no-repeat);
+                            top: -8.5rem;
+                            right: 2rem;
+                            z-index: 3;
+                        }
+
+                        &::after{
+                            @include background_url('pc/bakai_dog04_pc.png', 115px, 213px, no-repeat);
+                            top: 15.5rem;
+                            right: -7rem;
+                            z-index: 3;
+                        }
+                    }
+
+                }
+            }
+        }
+
+
+        .section_4{
+            margin-top: 8rem;
+
+            .sub_sec{
+                text-align: center;
+
+                p{
+                    font-size: 1.3rem;
+                    margin-bottom: 4rem;
+                }
+
+                .img_stn_4{
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
