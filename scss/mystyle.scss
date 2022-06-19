@@ -139,38 +139,33 @@ body{
         }
 
         .img_top{
-            width: 100%;
-            position: relative;
-            min-height: 470px;
-
-            .header-img{
-                width: 100%;
-                background-size: cover;
-                background-repeat: no-repeat 50% 0;
-            }
+            height: 470px;
+            
 
             .upper_layer{
-                position: absolute;
-                top: 0;
                 width: 100%;
+                position: relative;
+                // 倍率を変える（ブラウザの「ズーム」を使用する）とbackground:url() は高さの表示が限定される
+                background: url('../images/pc/fv_bg_pc.jpg');
+                background-size: cover;
                 height: 100%;
-                z-index: 3;
+                content: "";
 
                 .upLayer_rela{
+                    position: relative;
                     margin: 0 auto;
                     width: 1200px;
                     height: 100%;
-                    overflow: visible;
 
                     .magazine{
-                        float: left;
-                        padding-left: 500px;
-                        padding-top: 100px;
+                        position: absolute;
+                        top: 10rem;
+                        right: 25rem;
                     }
                     .umehana{
-                        float: left;
-                        padding-left: 50px;
-                        padding-top: 150px;
+                        position: absolute;
+                        bottom: -12rem;
+                        right: 0;
                     }
                 }
 
@@ -337,7 +332,6 @@ body{
                 }
                 
                 .side_stn{
-                    padding-left: 2.5rem;
 
                     &::after{
                         @include background_url('pc/facility_enjoy_pc.png', 322px, 103px, no-repeat);
@@ -439,20 +433,479 @@ body{
 
         .section_4{
             margin-top: 8rem;
+            height: 700px;
+
+            @include clearfix();
+
+            &::before{
+                @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+                bottom: -14rem;
+                right: 50%;
+                z-index: 1;
+                margin-right: 40rem;
+            }
 
             .sub_sec{
                 text-align: center;
+
+                &::before{
+                    @include background_url('pc/bakai_number04_pc.png', 133px, 133px, no-repeat);
+                    left: 45%;
+                    top: -13.5rem;
+                    z-index: 3;
+                }
 
                 p{
                     font-size: 1.3rem;
                     margin-bottom: 4rem;
                 }
 
-                .img_stn_4{
+                .img_stn{
                     width: 100%;
+                    position: relative;
+
+                    &::after{
+                        @include background_url('pc/library_library_pc.png', 170px, 77px, no-repeat);
+                        bottom: -4.3rem;
+                        right: 12rem;
+                    }
+
+                    article{
+                        position: absolute;
+                        border: 1px dashed #333;
+                        padding: 3rem;
+                        text-align: center;
+                        background: #fff;
+                        bottom: -11.5rem;
+                        left: 8rem;
+                        z-index: 2;
+
+                        &::before{
+                            @include background_url('pc/bakai_dog03_pc.png', 115px, 213px, no-repeat);
+                            top: -4.5rem;
+                            left: -9.5rem;
+                            z-index: 3;
+                        }
+
+                        &::after{
+                            @include background_url('pc/library_flower_pc.png', 62px, 42px, no-repeat);
+                            bottom: -1.4rem;
+                            right: -2.7rem;
+                            z-index: 3;
+                        }
+
+                        h4 .five_point{
+                            margin-bottom: 1.5rem;
+                           
+                        }
+
+                        p{
+                            font-size: 1.3rem;
+                            margin-bottom: 0;
+                        }
+                    }
                 }
             }
         }
 
+
+        .two_block{
+            margin-top: 15.5rem;
+
+            div{
+                width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+
+                img{
+                    &:nth-of-type(2){
+                        padding-left: 1.7rem;
+                    }
+                }
+            }
+            
+        }
+
+        .baika_event{
+            margin-top: 13rem;
+            padding-top: 10rem;
+            content: '';
+            display: block;
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: url('../images/pattern02.jpg');
+            padding-bottom: 10rem;
+
+            &::before{
+                @include background_url('../images/fillter.jpg', 100%, 130px, no-repeat);
+                position: absolute;
+                top: -10rem;
+                background-size: cover;
+            }
+
+            .event_sec{
+                position: relative;
+                width: 1200px;
+                margin: 0 auto;
+                background: #fff;
+                border-left: 1px solid #000;
+                border-right: 1px solid #000;
+
+                &::before{
+                    @include background_url('../images/fillter_top.png', 1200px, 10px, no-repeat);
+                    top: -0.7rem;
+                }
+
+                &::after{
+                    @include background_url('../images/fillter_bottom.png', 1200px, 10px, no-repeat);
+                    bottom: -0.7rem;
+                }
+
+                article{
+                    display: flex;
+                    justify-content: center;
+                    padding: 5rem 6rem;
+                    border-bottom: 1px dotted #888;
+
+                    div{
+
+                        &:nth-of-type(1){
+                            padding-right: 5rem;
+                        }
+
+                        p{
+                            line-height: 2.6;
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+
+                .maner_area{
+                    display: block;
+
+                    .maner_head{
+                        display: flex;
+                        justify-content: center;
+                        padding-right: 0;
+                        margin-bottom: 3rem;
+
+                        div{
+
+                            &:nth-of-type(1){
+                                padding-top: 3rem;
+                                padding-right: 11rem;
+                            }
+    
+                            p{
+                                line-height: 2.6;
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+
+                    .maner_event{
+                        // space-betweenは両端を幅いっぱいまで埋めることができる
+                        display: flex;
+                        justify-content: space-between;
+                        border-bottom: none;
+
+                        .maner_box{
+                            background: #fff5f6;
+                            padding-right: 0;
+                            width: 328px;
+
+                            .pink{
+                                padding: 1.5rem 2rem;
+
+                                .pink_word{
+                                    color: #f64077;
+                                    font-weight: 700;
+                                }
+
+                                p{
+                                    margin: 0;
+                                }
+                            }
+
+                        }
+                    }
+
+                    .bottom_P{
+                        width: 100%;
+                        margin-top: 3.2rem;
+                        line-height: 2.6;
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .umehana_area{
+                    border-bottom: none;
+
+                    .dog_image{
+                        padding-right: 11rem;
+
+                        a{
+                            content: '';
+                            background: url('../images/pc/bakai_frame_pc.png');
+                            display: block;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            padding: 1.5rem 1rem;
+                            margin-left: 6.5rem;
+                            margin-top: 2rem;
+                            border-bottom: 1px dashed #888;
+                            text-decoration: none;
+                            text-align: center;
+
+                            div{
+                                height: 100%;
+                                width: 100%;
+
+                                p{
+                                    font-size: 1.2rem;
+                                    color: #333;
+                                    line-height: 1.8;
+                                }
+                            }
+                        }
+                    }
+
+                    .intro_dog{
+
+                        .therapy_desc{
+                            margin-bottom: 2rem;
+                        }
+
+                        .dogs{
+                            display: flex;
+                            justify-content: space-between;
+                            padding-right: 3rem;
+                            align-items: end;
+
+                            &:nth-of-type(1){
+                                margin-bottom: 2rem;
+                            }
+
+                            .dog_spec{
+                                padding-right: 0;
+
+                                &:nth-child(2){
+                                    width: 435px;
+                                }
+
+                                p{
+                                    padding-right: 0;
+                                    margin-top: 0;
+                                    font-size: 1.2rem;
+                                    line-height: 2;
+                                    letter-spacing: -1px;
+                                }
+                            }
+                        }
+                    }
+                }
+               
+            }
+        }
+
+    }
+
+
+    footer{
+        border-top: 1px dotted #333;
+
+        .footer_img{
+            content: '';
+            display: block;
+            // position: relative;
+            width: 100%;
+            background: url('../images/pc/request_bg_pc.jpg');
+            text-align: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 10rem 0;
+
+            div{
+                text-align: center;
+
+                .f_txt{
+                    margin-bottom: 8rem;
+                    width: 410px;
+                }
+            }
+
+            .claim_btn{
+                text-align: center;
+                background: #f64077;
+                padding: 4rem 9rem 3rem;
+
+                img{
+                    width: 145px;
+                }
+            }
+
+            .back_btn{
+                width: 1200px;
+                margin: 0 auto;
+                position: relative;
+
+                .f_btn{
+                    position: absolute;
+                    right: -50rem;
+                    top: -8rem;
+                }
+            }
+        }
+
+        .footer_link{
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            padding: 5.7rem 0;
+
+            article{
+                flex: 1 1;
+                margin-right: 3rem;
+
+                &:nth-child(1){
+                    // ddが２列になるように調整
+                    flex-basis: 575px;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3){
+                    flex-basis: 300px;
+                }
+
+                dl{
+                    dt{
+                        border-bottom: 1px dotted #666;
+                        display: block;
+    
+                        &:nth-child(n + 2){
+                            margin-top: 3rem;
+                        }
+    
+                        a{
+                            text-decoration: none;
+                            list-style: none;
+                            font-weight: 700;
+                            color: #333;
+                            font-size: 14px;
+                        }
+                    }
+    
+                    dd{
+                        color:#020202;
+                        // ddが２列になるように調整
+                        margin: 0rem 0.5rem 0 0;
+                        font-size: 1.3rem;
+                        
+                        @include clearfix();
+
+                        ul{
+                            list-style: none;
+                            padding-left: 0;
+
+                            &:nth-of-type(1){
+                                float: left;
+                            }
+                            &:nth-of-type(2){
+                                float: right;
+                                // ddが２列になるように調整
+                                width: 205px;
+                            }
+
+                            li{
+                                a{
+                                    text-decoration: none;
+                                    color: #333;
+                                }
+                            }
+
+                        }
+                    }
+                    
+                }
+
+                .share{
+                    display: flex;
+                    
+                    .baika_ft_logo{
+                        flex-basis: 45%;
+
+                        img{
+                            width: 181px;
+                        }
+                       
+                    }
+
+                    .sns{
+                        padding-top: 0.7rem;
+
+                        img{
+                            width: 48px;
+                            padding-right: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_btm{
+            background: #000;
+            padding: 6rem auto;
+
+
+            .btm_width{
+                width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                padding: 0.7rem 0;
+
+                ul{
+                    list-style: none;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-around;
+                    flex: 0 1 67%;
+                    padding-left: 0;
+                    font-size: 13px;
+                    
+                    li{
+                        position: relative;
+
+                        a{
+                            
+                            color: #fff;
+                            text-decoration: none;
+                            padding-right: 3rem;
+                        }
+
+                        // liから指定してあげないと認識できない
+                        &:not(:last-child){
+                            a{
+                                border-right: 1px dotted #fff;
+
+                                &::after{
+                                    @include background_url('../images/blank_w.png', 10px, 13px, no-repeat);
+                                    top: 0.5rem;
+                                    right: 1.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                p{
+                    color: #fff;
+                    font-size: 13px;
+                }
+            }
+        }
     }
 }
