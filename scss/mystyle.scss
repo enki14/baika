@@ -1,10 +1,10 @@
-$layout-widht-inner: 910px;
 
 // mixinでメディアクエリを管理する
 $breakpoint: (
-    sp: 'screen and (max-width: 550px)',
-    tab: 'screen and (max-width: #{$layout-widht-inner - 1px})',
-    pc: 'screen and (mix-width: #{$layout-widht-inner})'
+    sps: 'all and (max-width: 340px)',
+    sp: 'all and (max-width: 767px)',
+    tab: 'all and (max-width: 1430px)',
+    pc: 'all and (max-width: 1610px)'
 );
 
 // $bpは$breakpointのそれぞれのキーを示している
@@ -70,71 +70,208 @@ $breakpoint: (
 
 html{
     font-size: 62.5%;
-    overflow-x:hidden;
+    // htmlがビューポートの幅と一致するのを防ぐためwidthの幅をmax-contentに指定した
+    width: max-content;
+    overflow:auto;
 }
 
 
 body{
+    // bodyにmin-width指定しておくと、レスポンシブの表示でもPCの見え方と同じになる
     min-width: 1260px;
     margin: 0;
     color: #333;
     line-height: 2.2;
+    overflow: hidden;
 
     header{
 
-        a{
+        .small_link{
             width: 100%;
-            text-align: right;
-            color: #333;
-            display: block;
+            height: 3rem;
+            position: relative;
+            clear: both;
+            content: '';
 
-            img{
-                padding-right: 0.5rem;
+            a{
+                color: #333;
+                position: absolute;
+                right: 3rem;
+                top: 1rem;
+                font-size: 1.3rem;
+
+
+                img{
+                    padding-right: 0.5rem;
+                }
             }
         }
 
         .header_nav{
             display: flex;
             justify-content: space-between;
-            padding: 0 3rem 3.5rem;
+            padding: 0 3rem 2.5rem;
+
+           
 
             .baika_logo{
-                padding: 0;
-
+                position: relative;
+                top: -1rem;
                 img{
                     float: left;
                     background-size: cover;
                 }
 
-                .baikaLogo_1{
-                    width: 185px;
-                    height: auto;
-                    padding-right: 1.5rem;
-                }
                 .baikaLogo_2{
-                    width: auto;
-                    height: 45px;
-                    padding-top: 0.5rem;
-                    padding-right: 2.5rem;
+                    position: absolute;
+                    top: 1.5rem;
+                    right: -18rem;
+                    
+                }
+
+                @include mq(tab){
+                    width: 185px;
+
+                    .baikaLogo_2{
+                        display: none;
+                    }
                 }
             }
 
             nav{
-                width: 70%;
-
                 ul{
                     list-style: none;
-                    @include table_layout(30, 100%);
 
-                    li{
-                        padding-top: 2rem;
+                    .gnav{
+                        float: left;
+                        height: 55px;
 
                         a{
+                            position: relative;
+                            display: block;
+                            text-indent: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 100%;
+                            background: url('../images/gnav.png');
                             text-decoration: none;
-                            @include font_pattern(1.3rem, #333, 700);
+
+                            &::after{
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                width: calc(100% - 30px);
+                                height: 3px;
+                                left: 50%;
+                                bottom: 0;
+                                opacity: 0;
+                                transform: translateX(-50%);
+                                background: #fe6a90;
+                            }
+
+                            // aをhoverした時のafter要素
+                            &:hover:after{
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    #gnav01{
+                        width: 108px;
+
+                        a:hover{
+                            background-position: 0 -56px;
+                        }
+                    }
+                    #gnav02{
+                        width: 108px;
+
+                        a{
+                            background-position: -108px 0;
+
+                            &:hover{
+                                background-position: -108px -56px;
+                            }
+                        }
+                    }
+
+                    #gnav03{
+                        width: 220px;
+
+                        a{
+                            background-position: -216px 0;
+
+                            &:hover{
+                                background-position: -216px -56px;
+                            }
+                        }
+                    }
+                    #gnav04{
+                        width: 104px;
+
+                        a{
+                            background-position: -436px 0;
+
+                            &:hover{
+                                background-position: -436px -56px;
+                            }
+                        }
+                    }
+
+                    #gnav05{
+                        width: 220px;
+                        a{
+                            background-position: -540px 0;
+
+                            &:hover{
+                                background-position: -540px -56px;
+                            }
+                        }
+                    }
+
+                    @include mq(tab){
+                        #gnav01,
+                        #gnav02{
+                            width: 98px;
+                        }
+
+                        #gnav03,
+                        #gnav05{
+                            width: 210px;
+                        }
+
+                        #gnav04{
+                            width: 94px;
+                        }
+                    }
+
+                    #gnav06,
+                    #gnav07{
+                        width: 180px;
+                        text-align: center;
+
+                        @include mq(pc){
+                            width: 130px;
+                        }
+                        
+                    }
+                    #gnav06{
+                        margin-right: 0.5rem;
+                        a{
+                            // 50% 50% で幅と高さを指定し、文字画像が真ん中に来るようにしている
+                            background: #ff829f url('../images/hd_btn_contact.png') no-repeat 50% 50%;
+                        }
+                       
+                    }
+                    #gnav07{
+                        a{
+                            background: #f64077 url('../images/hd_btn_request.png') no-repeat 50% 50%;
                         }
                     }
                 }
+
+                
             } 
         }
 
@@ -754,8 +891,12 @@ body{
 
                 .f_btn{
                     position: absolute;
-                    right: -50rem;
+                    right: -60rem;
                     top: -8rem;
+
+                    @include mq(sp){
+                        right: -55rem;
+                    }
                 }
             }
         }
@@ -781,13 +922,11 @@ body{
                 }
 
                 dl{
+                    margin-bottom: 3rem;
+                    
                     dt{
                         border-bottom: 1px dotted #666;
                         display: block;
-    
-                        &:nth-child(n + 2){
-                            margin-top: 3rem;
-                        }
     
                         a{
                             text-decoration: none;

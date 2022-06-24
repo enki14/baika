@@ -11,7 +11,9 @@
 </head>
 <body <?php body_class(); ?>>
     <header>
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/blank.png" alt="大学サイトリンク">梅花女子大学サイト</a>
+        <div class="small_link">
+            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/blank.png" alt="大学サイトリンク">梅花女子大学サイト</a>
+        </div>
         <div class="header_nav">
             <div class="baika_logo">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/pc/hd_logo_pc.png" 
@@ -20,8 +22,41 @@
                 class="baikaLogo_2" alt="梅花女子大ロゴ">
             </div>
             <nav>
-                <?php wp_nav_menu( array( 'theme_location' => 'baika_menu', 'menu_class' => 'baika_menu', 'container' => false, 'depth' => 1 ) ); ?>
+                <ul>
+                    <li id="gnav01" class="gnav">
+                        <a href="<?php echo esc_url(get_category_link( 4 )); ?>">
+                            入試情報
+                        </a>
+                    </li>
+                    <li id="gnav02" class="gnav">
+                        <a href="<?php echo esc_url( get_category_link( 5 ) ); ?>">
+                            学科紹介
+                        </a>
+                    </li>
+                    <li id="gnav03" class="gnav">
+                        <a href="<?php echo esc_url( get_category_link( 6 ) ); ?>">
+                            学費・バックアップ制度
+                        </a>
+                    </li>
+                    <li id="gnav04" class="gnav">
+                        <a href="<?php echo esc_url( get_category_link( 7 ) ); ?>">
+                            イベント
+                        </a>
+                    </li>
+                    <li id="gnav05" class="gnav">
+                        <a href="<?php echo esc_url( get_category_link( 8 ) ); ?>">
+                            先輩からのメッセージ
+                        </a>
+                    </li>
+                    <li id="gnav06" class="gnav">
+                        <a href="#"></a>
+                    </li>
+                    <li id="gnav07" class="gnav">
+                        <a href="#"></a>
+                    </li>
+                </ul>
             </nav>
+            
         </div>
         <div class="img_top">
             <div class="upper_layer">
@@ -283,34 +318,54 @@
         </section>
         <section class="footer_link">
             <article>
-                <dl>
-                    <dt><a href="#">入試情報</a></dt>
+                <dl>     
+                    <dt>
+                        <a href="<?php echo get_category_link(4); ?>">
+                            <?php echo $cat_name = get_the_category_by_ID(4); ?>
+                        </a>
+                    </dt>
+                    <?php 
+                        $cat_posts = get_posts(array(
+                            'post_type' => 'post',
+                            'category' => 4,
+                            'posts_per_page' => -1,
+                            'orderby' => 'ID',
+                            'order' => 'ASC'
+                        ));
+                        // array_sliceで投稿情報を別けている
+                        // 親と子を分けた部分に関しては、あまり動的とは言えない...
+                        $parent_posts = array_slice($cat_posts, 0, 3);
+                        $child_posts = array_slice($cat_posts, 3, 6);
+                        $back_posts = array_slice($cat_posts, 9);
+                    ?>
                     <dd>
                         <ul>
-                            <li><a href="#">入試情報index</a></li>
-                            <li><a href="#">入試のポイント</a></li>
-                            <li><a href="#">入試制度一覧</a></li>
-                            <li><a href="#">入試カレンダー</a></li>
-                            <li><a href="#">募集人員募集人員募集人員募集人員募集人員募集人員</a></li>
-                            <li><a href="#">入試カレンダー</a></li>
-                            <li><a href="#">募集人員</a></li>
-                            <li><a href="#">入試Q&A</a></li>
-                            <li><a href="#">入試結果</a></li>
-                            <li><a href="#">過去問題と解答例</a></li>
+                            <?php
+                                global $post;
+                                if($parent_posts): foreach($parent_posts as $post): setup_postdata($post);
+                                
+                            ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                            <?php 
+                                if($child_posts): foreach($child_posts as $post): setup_postdata($post);
+                            ?>
+                            <li><a href="<?php the_permalink() ?>">- <?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
                         </ul>
                         <ul>
-                            <li><a href="#">入試情報index</a></li>
-                            <li><a href="#">入試のポイント</a></li>
-                            <li><a href="#">入試制度一覧</a></li>
-                            <li><a href="#">入試カレンダー</a></li>
-                            <li><a href="#">募集人員募集人員募集人員募集人員募集人員募集人員</a></li>
-                            <li><a href="#">入試カレンダー</a></li>
-                            <li><a href="#">募集人員</a></li>
-                            <li><a href="#">入試Q&A</a></li>
-                            <li><a href="#">入試結果</a></li>
-                            <li><a href="#">過去問題と解答例</a></li>
+                            <?php 
+                                if($back_posts): foreach($back_posts as $post): setup_postdata($post);
+                                
+                            ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
                         </ul>
                     </dd>
+                   
                 </dl>
                 <div class="share">
                     <div class="baika_ft_logo">
@@ -327,36 +382,86 @@
             </article>
             <article>
                 <dl>
-                    <dt><a href="#">学科紹介</a></dt>
+                    <dt>
+                        <a href="<?php echo get_category_link(5); ?>">
+                            <?php echo $cat_name = get_the_category_by_ID(5); ?>
+                        </a>
+                    </dt>
+                    <?php 
+                        $cat_posts = get_posts(array(
+                            'post_type' => 'post',
+                            'category' => 5,
+                            'posts_per_page' => -1,
+                            'orderby' => 'ID',
+                            'order' => 'ASC'
+                        ));
+                    ?>
                     <dd>
                         <ul>
-                            <li><a href="#">学科紹介index</a></li>
-                            <li><a href="#">梅花の魅力</a></li>
-                            <li><a href="#">梅花女子大学のエレガンス科目</a></li>
-                            <li><a href="#">情報メディア学科</a></li>
-                            <li><a href="#">日本文化学科</a></li>
+                        <?php
+                            global $post;
+                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
+                            
+                        ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
                         </ul>
                     </dd>
                 </dl>
             </article>
             <article>
                 <dl>
-                    <dt><a href="#">学費・バックアップ制度</a></dt>
+                    <dt>
+                        <a href="<?php echo get_category_link(6); ?>">
+                            <?php echo $cat_name = get_the_category_by_ID(6); ?>
+                        </a>
+                    </dt>
+                    <?php 
+                        $cat_posts = get_posts(array(
+                            'post_type' => 'post',
+                            'category' => 6,
+                            'posts_per_page' => -1,
+                            'orderby' => 'ID',
+                            'order' => 'ASC'
+                        ));
+                    ?>
                     <dd>
                         <ul>
-                            <li><a href="#">学費・バックアップ制度index</a></li>
-                            <li><a href="#">特待生制度</a></li>
-                            <li><a href="#">入学検定料免除制度・S(スカラシップ)チャレンジ制度</a></li>
-                            <li><a href="#">入学手続方法・入学手続時納付金・学費</a></li>
-                            <li><a href="#">学費振替制度</a></li>
+                        <?php
+                            global $post;
+                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
+                            
+                        ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
                         </ul>
                     </dd>
-                    <dt><a href="#">イベント情報</a></dt>
+                    <dt>
+                        <a href="<?php echo get_category_link(7); ?>">
+                            <?php echo $cat_name = get_the_category_by_ID(7); ?>
+                        </a>
+                    </dt>
+                    <?php 
+                        $cat_posts = get_posts(array(
+                            'post_type' => 'post',
+                            'category' => 7,
+                            'posts_per_page' => -1,
+                            'orderby' => 'ID',
+                            'order' => 'ASC'
+                        ));
+                    ?>
                     <dd>
                         <ul>
-                            <li><a href="#">オープンキャンパス</a></li>
-                            <li><a href="#">進学相談会</a></li>
-                            <li><a href="#">入試説明会</a></li>
+                        <?php
+                            global $post;
+                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
+                            
+                        ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+                            <?php endforeach; endif; ?>
+                            <?php wp_reset_postdata(); ?>
                         </ul>
                     </dd>
                 </dl>
