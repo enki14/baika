@@ -14,3 +14,21 @@ function register_baika_menu(){
     register_nav_menu('baika_menu', '梅花メニュー');
 }
 add_action('after_setup_theme', 'register_baika_menu');
+
+
+// メインループにおける投稿の並び順を変更している
+// category.phpのメインループの部分で反映されている
+function query_array_set($query){
+    if(is_admin() || ! $query->is_main_query()){
+        return;
+    }
+
+    if($query->is_category()){
+        $query->set('order','ASC');
+        $query->set('orderby','ID');
+        $query->set('posts_per_page', '-1');
+    }
+}
+add_action('pre_get_posts', 'query_array_set');
+
+

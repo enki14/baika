@@ -1,0 +1,248 @@
+header{
+
+    .small_link{
+        width: 100%;
+        height: 3rem;
+        position: relative;
+        clear: both;
+        content: '';
+
+        a{
+            color: #333;
+            position: absolute;
+            right: 3rem;
+            top: 1rem;
+            font-size: 1.3rem;
+
+
+            img{
+                padding-right: 0.5rem;
+            }
+        }
+    }
+
+    .header_nav{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        padding: 0 3rem 2.5rem;
+
+       
+
+        .baika_logo{
+            position: relative;
+            top: -1rem;
+            img,
+            a{
+                float: left;
+                background-size: cover;
+            }
+
+            .baikaLogo_2{
+                position: absolute;
+                top: 1.5rem;
+                right: -18rem;
+                
+            }
+
+            @include mq(tab){
+                width: 185px;
+
+                .baikaLogo_2{
+                    display: none;
+                }
+            }
+        }
+
+        nav{
+            ul{
+                list-style: none;
+
+                .gnav{
+                    float: left;
+                    height: 55px;
+
+                    a{
+                        position: relative;
+                        display: block;
+                        text-indent: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 100%;
+                        background: url('../images/gnav.png');
+                        text-decoration: none;
+
+                        &::after{
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: calc(100% - 30px);
+                            height: 3px;
+                            left: 50%;
+                            bottom: 0;
+                            opacity: 0;
+                            -webkit-transform: translateX(-50%);
+                                -ms-transform: translateX(-50%);
+                                    transform: translateX(-50%);
+                            background: #fe6a90;
+                        }
+
+                        // aをhoverした時のafter要素
+                        &:hover:after{
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                #gnav01{
+                    width: 108px;
+
+                    a:hover{
+                        background-position: 0 -56px;
+                    }
+                }
+                #gnav02{
+                    width: 108px;
+
+                    a{
+                        background-position: -108px 0;
+
+                        &:hover{
+                            background-position: -108px -56px;
+                        }
+                    }
+                }
+
+                #gnav03{
+                    width: 220px;
+
+                    a{
+                        background-position: -216px 0;
+
+                        &:hover{
+                            background-position: -216px -56px;
+                        }
+                    }
+                }
+                #gnav04{
+                    width: 104px;
+
+                    a{
+                        background-position: -436px 0;
+
+                        &:hover{
+                            background-position: -436px -56px;
+                        }
+                    }
+                }
+
+                #gnav05{
+                    width: 220px;
+                    a{
+                        background-position: -540px 0;
+
+                        &:hover{
+                            background-position: -540px -56px;
+                        }
+                    }
+                }
+
+                @include mq(tab){
+                    #gnav01,
+                    #gnav02{
+                        width: 98px;
+                    }
+
+                    #gnav03,
+                    #gnav05{
+                        width: 210px;
+                    }
+
+                    #gnav04{
+                        width: 94px;
+                    }
+                }
+
+                #gnav06,
+                #gnav07{
+                    width: 180px;
+                    text-align: center;
+
+                    @include mq(pc){
+                        width: 130px;
+                    }
+                    
+                }
+                #gnav06{
+                    margin-right: 0.5rem;
+                    a{
+                        // 50% 50% で幅と高さを指定し、文字画像が真ん中に来るようにしている
+                        background: #ff829f url('../images/hd_btn_contact.png') no-repeat 50% 50%;
+                    }
+                   
+                }
+                #gnav07{
+                    a{
+                        background: #f64077 url('../images/hd_btn_request.png') no-repeat 50% 50%;
+                    }
+                }
+            }
+
+            
+        } 
+    }
+
+    .img_top{
+        height: 470px;
+        
+
+        .upper_layer{
+            width: 100%;
+            position: relative;
+            // 倍率を変える（ブラウザの「ズーム」を使用する）とbackground:url() は高さの表示が限定される
+            background: url('../images/pc/fv_bg_pc.jpg');
+            background-size: cover;
+            height: 100%;
+            content: "";
+
+            .upLayer_rela{
+                position: relative;
+                margin: 0 auto;
+                width: 1200px;
+                height: 100%;
+
+                .magazine{
+                    position: absolute;
+                    top: 10rem;
+                    right: 25rem;
+                }
+                .umehana{
+                    position: absolute;
+                    bottom: -12rem;
+                    right: 0;
+                }
+            }
+
+        }
+
+        .post_layer{
+            width: 100%;
+            height: 470px;
+
+            .upLayer_rela{
+                position: relative;
+                margin: 0 auto;
+                width: 1200px;
+                height: 100%;
+
+                .pink_box{
+                    margin-top: 8rem;
+                }
+            }
+        }
+    }
+}
