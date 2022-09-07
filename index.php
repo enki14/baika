@@ -1,92 +1,21 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>baika</title>
-    <meta name="description" content="サイトキャプションを入力">
-    <meta name="keywords" content="サイトキーワードを,で区切って入力">
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-    <header>
-        <div class="small_link">
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/blank.png" alt="大学サイトリンク">梅花女子大学サイト</a>
-        </div>
-        <div class="header_nav">
-            <div class="baika_logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/hd_logo_pc.png" 
-                class="baikaLogo_1" alt="梅花女子大学">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/hd_txt_founding.png" 
-                class="baikaLogo_2" alt="梅花女子大ロゴ">
-            </div>
-            <nav>
-                <ul>
-                    <li id="gnav01" class="gnav">
-                        <a href="<?php echo esc_url(get_category_link( 4 )); ?>">
-                            入試情報
-                        </a>
-                    </li>
-                    <li id="gnav02" class="gnav">
-                        <a href="<?php echo esc_url( get_category_link( 5 ) ); ?>">
-                            学科紹介
-                        </a>
-                    </li>
-                    <li id="gnav03" class="gnav">
-                        <a href="<?php echo esc_url( get_category_link( 6 ) ); ?>">
-                            学費・バックアップ制度
-                        </a>
-                    </li>
-                    <li id="gnav04" class="gnav">
-                        <a href="<?php echo esc_url( get_category_link( 7 ) ); ?>">
-                            イベント
-                        </a>
-                    </li>
-                    <li id="gnav05" class="gnav">
-                        <a href="<?php echo esc_url( get_category_link( 8 ) ); ?>">
-                            先輩からのメッセージ
-                        </a>
-                    </li>
-                    <li id="gnav06" class="gnav">
-                        <a href="#"></a>
-                    </li>
-                    <li id="gnav07" class="gnav">
-                        <a href="#"></a>
-                    </li>
-                </ul>
-            </nav>
-            
-        </div>
-        <div class="img_top">
-            <div class="upper_layer">
-                <div class="upLayer_rela">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_tit_pc.png" 
-                    class="magazine" alt="life magazine">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_dog_pc.png" 
-                    class="umehana" alt="梅と花">
-                </div>
-            </div>
-        </div>
-    </header>
+<?php get_header(); ?>
     <main>
         <h2>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/baika_txt_pc.png" 
+            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/baika_txt_pc.png') ?>" 
             class="baika_text" alt="キャッチフレーズ">
         </h2>
         <section class="section_1">
             <div class="sub_sec">
                 <div class="img_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/garden_img_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/garden_img_pc.png') ?>" 
                     alt="ガーデンキャンパス">
                 </div>
                 <div class="side_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/garden_ttl_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/garden_ttl_pc.png') ?>" 
                     class="garden_h" alt="ガーデンキャンパスの見出し">
                     <article class="side_catch">
                         <h4>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/garden_tit_pc.png" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/garden_tit_pc.png') ?>" 
                             class="five_point" alt="梅ちゃんの5つ星ポイント">
                         </h4>
                         <p>
@@ -101,11 +30,11 @@
         <section class="section_2">
             <div class="sub_sec">
                 <div class="side_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/facility_ttl_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/facility_ttl_pc.png') ?>" 
                     class="campus_h" alt="キャンパス設備">
                     <article>
                         <h4>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/facility_tit_pc.png" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/facility_tit_pc.png') ?>" 
                             class="five_point" alt="花ちゃんの5つ星ポイント">
                         </h4>
                         <p>
@@ -119,7 +48,7 @@
                     </article>
                 </div>
                 <div class="img_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/facility_img_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/facility_img_pc.png') ?>" 
                     alt="聖堂">
                 </div>
             </div>
@@ -127,15 +56,15 @@
         <section class="section_3">
             <div class="sub_sec">
                 <div class="img_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/cafeteria_img_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/cafeteria_img_pc.png') ?>" 
                     alt="カフェテリア">
                 </div>
                 <div class="side_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/cafeteria_ttl_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/cafeteria_ttl_pc.png') ?>" 
                     class="cafe_h" alt="食堂・カフェ">
                     <article>
                         <h4>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/cafeteria_tit_pc.png" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/cafeteria_tit_pc.png') ?>" 
                             class="five_point" alt="梅ちゃんの5つ星ポイント">
                         </h4>
                         <p>
@@ -150,18 +79,18 @@
         </section>
         <section class="section_4">
             <div class="sub_sec">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/library_ttl_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/library_ttl_pc.png') ?>" 
                 class="lib_h" alt="図書館">
                 <p>
                     梅花女子大学図書館には、約38万冊の図書と約3000種類の雑誌、そして約2万3000点の視聴覚資料(DVD、Blu-ray、CDとビデオ)などが所蔵されています。<br>
                     小説から専門書まで、新刊や話題になった本も読むことができます。
                 </p>
                 <div class="img_stn">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/library_img_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/library_img_pc.png') ?>" 
                     class="lib_img" alt="図書館内">
                     <article class="side_catch">
                         <h4>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/library_tit_pc.png" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/library_tit_pc.png') ?>" 
                             class="five_point" alt="花ちゃんの5つ星ポイント">
                         </h4>
                         <p>
@@ -174,15 +103,15 @@
         </section>
         <section class="two_block">
             <div>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/book_img01_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/book_img01_pc.png') ?>" 
                 class="library_block" alt="6階建ての図書館">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/book_img02_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/book_img02_pc.png') ?>" 
                 class="library_block" alt="図書館情報誌">
             </div>
             <div>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/book_img03_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/book_img03_pc.png') ?>" 
                 class="library_block" alt="各学科・専門書">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/book_img04_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/book_img04_pc.png') ?>" 
                 class="library_block" alt="読書キャンペーン">
             </div>
         </section>
@@ -190,7 +119,7 @@
             <div class="event_sec">
                 <article>
                     <div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/foppery_ttl_pc.png" alt="おしゃれの日">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/foppery_ttl_pc.png') ?>" alt="おしゃれの日">
                         <p>
                             梅花女子大学では、大学での学びを通じて学生が「仕事力あるおしゃれな女性」として
                             他者への配慮や気配りができる品性あるエレガントでスマートな女性として生涯輝き続けることを
@@ -202,15 +131,15 @@
                         </p>
                     </div>
                     <div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/foppery_img_pc.png" alt="おしゃれのイメージ">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/foppery_img_pc.png') ?>" alt="おしゃれのイメージ">
                     </div>
                 </article>
                 <article>
                     <div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/impression_img_pc.png" alt="校内">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/impression_img_pc.png') ?>" alt="校内">
                     </div>
                     <div>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/impression_ttl_pc.png" alt="感動の日">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/impression_ttl_pc.png') ?>" alt="感動の日">
                         <p>
                             梅花女子大学では、毎月15日を「感動の日」とし、日本一感動あふれるキャンパスをめざしています。
                             私達の感性を豊かにしてくれる、四季の花々が咲き乱れるガーデンキャンパス。
@@ -223,33 +152,33 @@
                 <article class="maner_area">
                     <div class="maner_head">
                         <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/mannerproject_ttl_pc.png" alt="梅花マナープロジェクト">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/mannerproject_ttl_pc.png') ?>" alt="梅花マナープロジェクト">
                             <p>
                                 「梅花マナープロジェクト」とは、2010年後期学生総会で学生自治会から提案された、学生発のマナー向上プロジェクトです。
                                 学生自身が梅花の学生としてふさわしいマナーを自分たちで考え、ポスターや常に携帯するカードを全学生に配布しました。
                             </p>
                         </div>
                         <div>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/mannerproject_img_pc.png" alt="女子力はマナーから">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/mannerproject_img_pc.png') ?>" alt="女子力はマナーから">
                         </div>
                     </div>
                     <div class="maner_event">
                         <div class="maner_box">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/mannerproject_img01_pc.jpg" alt="マナー講座">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/mannerproject_img01_pc.jpg') ?>" alt="マナー講座">
                             <div class="pink">
                                 <p class="pink_word">マナー講座・講習・検定</p>
                                 <p>ホテルの接客やヘアメイクなどについて専門講師をお招きしてマナーやおしゃれの大切さを学びます。</p>
                             </div>
                         </div>
                         <div class="maner_box">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/mannerproject_img02_pc.jpg" alt="クリーンキャンペーン">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/mannerproject_img02_pc.jpg') ?>" alt="クリーンキャンペーン">
                             <div class="pink">
                                 <p class="pink_word">クリーンキャンペーン</p>
                                 <p>学内食堂やスクールバス乗車地周辺をのべ110人が清掃します。街の方々から励ましの言葉をいただくこともあります。</p>
                             </div>
                         </div>
                         <div class="maner_box">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/mannerproject_img03_pc.jpg" alt="あいさつ運動">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/mannerproject_img03_pc.jpg') ?>" alt="あいさつ運動">
                             <div class="pink">
                                 <p class="pink_word">あいさつ運動</p>
                                 <p>学内食堂前やスクールバス乗車地周辺でクラブ・サークルの学生を中心にのべ300人が大きな声であいさつをします。</p>
@@ -259,29 +188,29 @@
                     <p class="bottom_P">
                         マナーは、人から言われて、人から教わるだけで身につくものではありません。学生自ら、マナーの向上をめざし、考え、行動し、
                         一人ひとりの持っているものを学生生活のなかでさらに磨き、自律した芯から美しい女性をめざす。
-                        　それでこそ、梅花女子！　美しく、梅花女子。
+                        それでこそ、梅花女子！　美しく、梅花女子。
                     </p>
                 </article>
                 <article class="umehana_area">
                     <div class="dog_image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_dog_pc.png" alt="梅と花">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_dog_pc.png') ?>" alt="梅と花">
                         <a href="#" class="twitter">
                             <div>
                                 <p>セラピー犬 梅ちゃんのTwitterもご覧ください </p>
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/bakai_btn01_pc.png" alt="ツイッターボタン">
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/bakai_btn01_pc.png') ?>" alt="ツイッターボタン">
                             </div>
                         </a>
                     </div>
                     <div class="intro_dog">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_ttl_pc.png" alt="セラピー犬の梅と花">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_ttl_pc.png') ?>" alt="セラピー犬の梅と花">
                         <p class="therapy_desc">
                             梅花女子大学には、セラピー犬の梅ちゃん・花ちゃんという大切なパートナーがいます。<br>
                             私達の心を癒し、元気にしてくれる梅ちゃん・花ちゃん。毎朝、私たちのお出迎えをしてくれます。
                         </p>
                         <div class="dogs">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_dog01_pc.png" alt="梅ちゃんのイメージ">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_dog01_pc.png') ?>" alt="梅ちゃんのイメージ">
                             <div class="dog_spec">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_name01_pc.png" alt="梅ちゃん">
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_name01_pc.png') ?>" alt="梅ちゃん">
                                 <p>
                                     スタンダードプードルの女の子<br>
                                     心理学科アニマルセラピーコース新設に伴い2012年5月に入学。笑顔がかわいい人気者
@@ -289,9 +218,9 @@
                             </div>
                         </div>
                         <div class="dogs">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_dog02_pc.png" alt="花ちゃんのイメージ">
+                            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_dog02_pc.png') ?>" alt="花ちゃんのイメージ">
                             <div class="dog_spec">
-                                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/animaltherapy_name02_pc.png" alt="花ちゃん">
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/animaltherapy_name02_pc.png') ?>" alt="花ちゃん">
                                 <p>
                                     スタンダードプードルの女の子<br>
                                     とっても明るい花ちゃん、みんなが大好き
@@ -303,206 +232,4 @@
             </div>
         </section>
     </main>
-    <footer>
-        <section class="footer_img">
-            <div>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/request_txt.png" 
-                class="f_txt" alt="お気軽にどうぞ">
-            </div>
-            <a href="#" class="claim_btn">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/request_btn.png" alt="資料を請求する">
-            </a>
-            <a href="#" class="back_btn">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/ft_btn_pagetop_pc.png" 
-                class="f_btn" alt="トップへ戻るボタン">
-            </a>
-        </section>
-        <section class="footer_link">
-            <article>
-                <dl>     
-                    <dt>
-                        <a href="<?php echo get_category_link(4); ?>">
-                            <?php echo $cat_name = get_the_category_by_ID(4); ?>
-                        </a>
-                    </dt>
-                    <?php 
-                        $cat_posts = get_posts(array(
-                            'post_type' => 'post',
-                            'category' => 4,
-                            'posts_per_page' => -1,
-                            'orderby' => 'ID',
-                            'order' => 'ASC'
-                        ));
-                        // array_sliceで投稿情報を別けている
-                        // 親と子を分けた部分に関しては、あまり動的とは言えない...
-                        $parent_posts = array_slice($cat_posts, 0, 3);
-                        $child_posts = array_slice($cat_posts, 3, 6);
-                        $back_posts = array_slice($cat_posts, 9);
-                    ?>
-                    <dd>
-                        <ul>
-                            <?php
-                                global $post;
-                                if($parent_posts): foreach($parent_posts as $post): setup_postdata($post);
-                                
-                            ?>
-                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                            <?php 
-                                if($child_posts): foreach($child_posts as $post): setup_postdata($post);
-                            ?>
-                            <li><a href="<?php the_permalink() ?>">- <?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </ul>
-                        <ul>
-                            <?php 
-                                if($back_posts): foreach($back_posts as $post): setup_postdata($post);
-                                
-                            ?>
-                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </ul>
-                    </dd>
-                   
-                </dl>
-                <div class="share">
-                    <div class="baika_ft_logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_logo.png" 
-                        alt="梅花大学ロゴ">
-                    </div>
-                    <div class="sns">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_tw.png" alt="twitter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_line.png" alt="line">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_fb.png" alt="facebook">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_ig.png" alt="ig">
-                    </div>
-                </div>
-            </article>
-            <article>
-                <dl>
-                    <dt>
-                        <a href="<?php echo get_category_link(5); ?>">
-                            <?php echo $cat_name = get_the_category_by_ID(5); ?>
-                        </a>
-                    </dt>
-                    <?php 
-                        $cat_posts = get_posts(array(
-                            'post_type' => 'post',
-                            'category' => 5,
-                            'posts_per_page' => -1,
-                            'orderby' => 'ID',
-                            'order' => 'ASC'
-                        ));
-                    ?>
-                    <dd>
-                        <ul>
-                        <?php
-                            global $post;
-                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
-                            
-                        ?>
-                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </ul>
-                    </dd>
-                </dl>
-            </article>
-            <article>
-                <dl>
-                    <dt>
-                        <a href="<?php echo get_category_link(6); ?>">
-                            <?php echo $cat_name = get_the_category_by_ID(6); ?>
-                        </a>
-                    </dt>
-                    <?php 
-                        $cat_posts = get_posts(array(
-                            'post_type' => 'post',
-                            'category' => 6,
-                            'posts_per_page' => -1,
-                            'orderby' => 'ID',
-                            'order' => 'ASC'
-                        ));
-                    ?>
-                    <dd>
-                        <ul>
-                        <?php
-                            global $post;
-                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
-                            
-                        ?>
-                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </ul>
-                    </dd>
-                    <dt>
-                        <a href="<?php echo get_category_link(7); ?>">
-                            <?php echo $cat_name = get_the_category_by_ID(7); ?>
-                        </a>
-                    </dt>
-                    <?php 
-                        $cat_posts = get_posts(array(
-                            'post_type' => 'post',
-                            'category' => 7,
-                            'posts_per_page' => -1,
-                            'orderby' => 'ID',
-                            'order' => 'ASC'
-                        ));
-                    ?>
-                    <dd>
-                        <ul>
-                        <?php
-                            global $post;
-                            if($cat_posts): foreach($cat_posts as $post): setup_postdata($post);
-                            
-                        ?>
-                            <li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
-                            <?php endforeach; endif; ?>
-                            <?php wp_reset_postdata(); ?>
-                        </ul>
-                    </dd>
-                </dl>
-            </article>
-        </section>
-        <section class="footer_btm">
-            <div class="btm_width">
-                <ul>
-                    <li>
-                        <a href="#">梅花女子大学サイト</a>
-                    </li>
-                    <li>
-                        <a href="#">梅花歌劇団</a>
-                    </li>
-                    <li>
-                        <a href="#">お知らせ</a>
-                    </li>
-                    <li>
-                        <a href="#">交通アクセス</a>
-                    </li>
-                    <li>
-                        <a href="#">教員紹介サイト</a>
-                    </li>
-                    <li>
-                        <a href="#">サイトマップ</a>
-                    </li>
-                </ul>
-                <p>Copyright(c) Baika Women’s University. All right reserved.</p>
-            </div>
-        </section>
-        <script>
-            jQuery(function(){
-                let back_btn = $('.f_btn');
-                back_btn.on('click', function(){
-                    $('body, html').animate({scrollTop:0}, 500, 'swing');
-                    return false;
-                });
-            });
-        </script>
-    </footer>
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php get_footer(); ?>

@@ -7,21 +7,21 @@
     <title>梅花ライフマガジン | 学科紹介 | 梅花女子大学　受験生応援サイト</title>
     <meta name="description" content="サイトキャプションを入力">
     <meta name="keywords" content="サイトキーワードを,で区切って入力">
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri() .'/images/favicon.ico') ?>">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
     <header>
         <div class="small_link">
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/blank.png" alt="大学サイトリンク">梅花女子大学サイト</a>
+            <a href="#"><img src="<?php echo esc_url(get_template_directory_uri() .'/images/blank.png') ?>" alt="大学サイトリンク">梅花女子大学サイト</a>
         </div>
         <div class="header_nav">
             <div class="baika_logo">
                 <a href="<?php echo esc_url(home_url()); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/hd_logo_pc.png" 
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/hd_logo_pc.png') ?>" 
                     class="baikaLogo_1" alt="梅花女子大学">
                 </a>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/hd_txt_founding.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/hd_txt_founding.png') ?>" 
                 class="baikaLogo_2" alt="梅花女子大ロゴ">
             </div>
             <nav>
@@ -64,30 +64,30 @@
             <?php if(is_front_page()): ?>
                 <div class="upper_layer">
                     <div class="upLayer_rela">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_tit_pc.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/index_tit_pc.png') ?>" 
                         class="magazine" alt="life magazine">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_dog_pc.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/index_dog_pc.png') ?>" 
                         class="umehana" alt="梅と花">
                     </div>
                 </div>
             <?php elseif(is_category('4')): ?>
                 <div class="post_layer">
                     <div class="upLayer_rela">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_cat4_pc.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/index_cat4_pc.png') ?>" 
                         class="pink_box" alt="入試情報">
                     </div>
                 </div>
             <?php elseif(is_category('5')): ?>
                 <div class="post_layer">
                     <div class="upLayer_rela">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_cat5_pc.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/index_cat5_pc.png') ?>" 
                         class="pink_box" alt="学科紹介">
                     </div>
                 </div>
             <?php elseif(is_category('6')): ?>
                 <div class="post_layer">
                     <div class="upLayer_rela">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/index_cat6_pc.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/index_cat6_pc.png') ?>" 
                         class="pink_box" alt="学費・バックアップ制度">
                     </div>
                 </div>
@@ -95,16 +95,22 @@
                 <div class="post_layer">
                     <div class="upLayer_rela">
                         <div class="event_2022">
-                            <span>2022</span>
-                            <span>open</span>
-                            <span>campus</span>
+                            <span>
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/mv_typo_year.png') ?>" class="twenty-two" alt="2022">
+                            </span>
+                            <span>
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/mv_typo_title01.png') ?>" class="event_open" alt="open">
+                            </span>
+                            <span>
+                                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/mv_typo_title02.png') ?>" class="event_campus" alt="campus">
+                            </span>
                         </div>
                     </div>
                 </div>
             <?php elseif(is_category('8')): ?>
                 <div class="post_layer">
                     <div class="upLayer_rela">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/message_tit.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/message_tit.png') ?>" 
                         class="pink_box" alt="先輩からのメッセージ">
                     </div>
                 </div>

@@ -1,14 +1,14 @@
     <footer>
         <section class="footer_img">
             <div>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/request_txt.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/request_txt.png') ?>" 
                 class="f_txt" alt="お気軽にどうぞ">
             </div>
             <a href="#" class="claim_btn">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/request_btn.png" alt="資料を請求する">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/request_btn.png') ?>" alt="資料を請求する">
             </a>
             <a href="#" class="back_btn">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/ft_btn_pagetop_pc.png" 
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/ft_btn_pagetop_pc.png') ?>" 
                 class="f_btn" alt="トップへ戻るボタン">
             </a>
         </section>
@@ -65,14 +65,14 @@
                 </dl>
                 <div class="share">
                     <div class="baika_ft_logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_logo.png" 
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/ft_logo.png') ?>" 
                         alt="梅花大学ロゴ">
                     </div>
                     <div class="sns">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_tw.png" alt="twitter">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_line.png" alt="line">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_fb.png" alt="facebook">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/ft_btn_ig.png" alt="ig">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/ft_btn_tw.png') ?>" alt="twitter">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/ft_btn_line.png') ?>" alt="line">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/ft_btn_fb.png') ?>" alt="facebook">
+                        <img src="<?php echo esc_url(get_template_directory_uri() .'/images/ft_btn_ig.png') ?>" alt="ig">
                     </div>
                 </div>
             </article>
@@ -195,9 +195,7 @@
                     $('body, html').animate({scrollTop:0}, 500, 'swing');
                     return false;
                 });
-            });
-
-            
+            });            
         </script>
     </footer>
     <?php wp_footer(); ?>

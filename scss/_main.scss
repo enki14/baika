@@ -50,32 +50,43 @@ main{
             }
 
             // category一覧ページのcss
-            .post_table{
-                
-                tr{
+            .post_list{
+                display: table;
+                width: 100%;
+                padding-left: 0;
 
-                    td{
-                        padding: 15px 0 15px 30px;
-                        border-bottom: 1px dotted #666;
-                        position: relative;
+                li{
+                    display: table-cell;
+                    float: left;
+                    width: 45%;
+                    padding: 15px 0 15px 30px;
+                    border-bottom: 1px dotted #666;
+                    position: relative;
+                    
+                    &:nth-child(2n+1){
+                        clear: both;
+                        margin-right: 5.5rem;
+                    }
+
+                    &::before{
+                        @include background_url('ico_arw_r.png', 30px, 30px, no-repeat);
+                        background-size: 75%;
+                        top: 2rem;
+                        left: 0rem;
+                    }
+                    
+                    a{
+                        text-decoration: none;
+                        color: #333;
+                        font-size: 1.5rem;
+                        background-repeat: no-repeat;
                         
-    
-                        &::before{
-                            @include background_url('ico_arw_r.png', 30px, 30px, no-repeat);
-                            background-size: 75%;
-                            top: 2rem;
-                            left: 0rem;
-                        }
-                        
-                        a{
-                            text-decoration: none;
-                            color: #333;
-                            font-size: 1.5rem;
-                            background-repeat: no-repeat;
-                            
-                        }
                     }
                 }
+            }
+
+            .cat_h3{
+                font-size: 24px;
             }
 
         }
