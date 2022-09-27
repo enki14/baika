@@ -1,3 +1,5 @@
+@use "mixin";
+
 main{
     padding: 0;
     margin: 10rem 0 0;
@@ -69,7 +71,7 @@ main{
                     }
 
                     &::before{
-                        @include background_url('ico_arw_r.png', 30px, 30px, no-repeat);
+                        @include mixin.background_url('ico_arw_r.png', 30px, 30px, no-repeat);
                         background-size: 75%;
                         top: 2rem;
                         left: 0rem;
@@ -97,7 +99,7 @@ main{
     .section_1{
 
         &::after{
-            @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+            @include mixin.background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
             bottom: -4.5rem;
             // left:50%のところから右に向かって繰り返すという意味
             left: 50%;
@@ -108,7 +110,7 @@ main{
         .sub_sec{
 
             &::before{
-                @include background_url('pc/bakai_number01_pc.png', 133px, 133px, no-repeat);
+                @include mixin.background_url('pc/bakai_number01_pc.png', 133px, 133px, no-repeat);
                 background-size: cover;
                 top: -3rem;
                 left: 49.5%;
@@ -117,7 +119,7 @@ main{
             .img_stn{
 
                 &::after{
-                    @include background_url('pc/bakai_leg01_pc.png', 105px, 244px, no-repeat);
+                    @include mixin.background_url('pc/bakai_leg01_pc.png', 105px, 244px, no-repeat);
                     bottom: -10rem;
                     left: 2.5rem;
                 }
@@ -125,7 +127,7 @@ main{
             .side_stn{
 
                 &::after{
-                    @include background_url('pc/garden_herewego_pc.png', 216px, 102px, no-repeat);
+                    @include mixin.background_url('pc/garden_herewego_pc.png', 216px, 102px, no-repeat);
                     left: 2.5rem;
                     bottom: 4.5rem;
                     z-index: 3;
@@ -143,14 +145,14 @@ main{
 
 
                     &::before{
-                        @include background_url('pc/garden_flower_pc.png', 40px, 56px, no-repeat);
+                        @include mixin.background_url('pc/garden_flower_pc.png', 40px, 56px, no-repeat);
                         top: -3rem;
                         left: -3rem;
                         z-index: 3;
                     }
 
                     &::after{
-                        @include background_url('pc/bakai_dog01_pc.png', 115px, 213px, no-repeat);
+                        @include mixin.background_url('pc/bakai_dog01_pc.png', 115px, 213px, no-repeat);
                         top: 18.5rem;
                         right: -8rem;
                         z-index: 3;
@@ -163,7 +165,7 @@ main{
     .section_2{
 
         &::after{
-            @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+            @include mixin.background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
             bottom: -3rem;
             right: 50%;
             z-index: 2;
@@ -175,7 +177,7 @@ main{
             top: -3rem;
 
             &::before{
-                @include background_url('pc/bakai_number02_pc.png', 133px, 133px, no-repeat);
+                @include mixin.background_url('pc/bakai_number02_pc.png', 133px, 133px, no-repeat);
                 left: 41.5%;
                 top: -2rem;
                 z-index: 3;
@@ -185,7 +187,7 @@ main{
                 padding-left: 5rem;
 
                 &::after{
-                    @include background_url('pc/bakai_leg02_pc.png', 102px, 235px, no-repeat);
+                    @include mixin.background_url('pc/bakai_leg02_pc.png', 102px, 235px, no-repeat);
                     bottom: -10rem;
                     right: 7.5rem;
                 }
@@ -199,7 +201,7 @@ main{
             .side_stn{
 
                 &::after{
-                    @include background_url('pc/facility_enjoy_pc.png', 322px, 103px, no-repeat);
+                    @include mixin.background_url('pc/facility_enjoy_pc.png', 322px, 103px, no-repeat);
                     right: -3rem;
                     bottom: -3rem;
                     z-index: 3;
@@ -212,14 +214,14 @@ main{
 
                 article{
                     &::before{
-                        @include background_url('pc/facility_flower_pc.png', 53px, 44px, no-repeat);
+                        @include mixin.background_url('pc/facility_flower_pc.png', 53px, 44px, no-repeat);
                         top: -2.5rem;
                         left: -2.5rem;
                         z-index: 3;
                     }
 
                     &::after{
-                        @include background_url('pc/bakai_dog02_pc.png', 115px, 213px, no-repeat);
+                        @include mixin.background_url('pc/bakai_dog02_pc.png', 115px, 213px, no-repeat);
                         top: 18rem;
                         left: -5rem;
                         z-index: 3;
@@ -233,7 +235,7 @@ main{
         margin-top: 11rem;
 
         &::after{
-            @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+            @include mixin.background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
             bottom: 2rem;
             // left:50%のところから右に向かって繰り返すという意味
             left: 50%;
@@ -244,7 +246,7 @@ main{
         .sub_sec{
 
             &::before{
-                @include background_url('pc/bakai_number03_pc.png', 133px, 133px, no-repeat);
+                @include mixin.background_url('pc/bakai_number03_pc.png', 133px, 133px, no-repeat);
                 left: 10%;
                 top: -1.5rem;
                 z-index: 3;
@@ -255,13 +257,13 @@ main{
                 left: -6rem;
 
                 &::before{
-                    @include background_url('pc/cafeteria_cat_pc.png', 226px, 90px, no-repeat);
+                    @include mixin.background_url('pc/cafeteria_cat_pc.png', 226px, 90px, no-repeat);
                     top: 0rem;
                     right: -6rem;
                 }
 
                 &::after{
-                    @include background_url('pc/bakai_leg03_pc.png', 108px, 171px, no-repeat);
+                    @include mixin.background_url('pc/bakai_leg03_pc.png', 108px, 171px, no-repeat);
                     bottom: -18rem;
                     left: 11rem;
                 }
@@ -277,14 +279,14 @@ main{
 
                 article{
                     &::before{
-                        @include background_url('pc/cafeteria_flower_pc.png', 39px, 111px, no-repeat);
+                        @include mixin.background_url('pc/cafeteria_flower_pc.png', 39px, 111px, no-repeat);
                         top: -8.5rem;
                         right: 2rem;
                         z-index: 3;
                     }
 
                     &::after{
-                        @include background_url('pc/bakai_dog04_pc.png', 115px, 213px, no-repeat);
+                        @include mixin.background_url('pc/bakai_dog04_pc.png', 115px, 213px, no-repeat);
                         top: 15.5rem;
                         right: -7rem;
                         z-index: 3;
@@ -300,10 +302,10 @@ main{
         margin-top: 8rem;
         height: 700px;
 
-        @include clearfix();
+        @include mixin.clearfix();
 
         &::before{
-            @include background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
+            @include mixin.background_url('pc/bakai_line_pc.png', 50%, 152px, repeat-x 0 0);
             bottom: -14rem;
             right: 50%;
             z-index: 1;
@@ -314,7 +316,7 @@ main{
             text-align: center;
 
             &::before{
-                @include background_url('pc/bakai_number04_pc.png', 133px, 133px, no-repeat);
+                @include mixin.background_url('pc/bakai_number04_pc.png', 133px, 133px, no-repeat);
                 left: 45%;
                 top: -13.5rem;
                 z-index: 3;
@@ -330,7 +332,7 @@ main{
                 position: relative;
 
                 &::after{
-                    @include background_url('pc/library_library_pc.png', 170px, 77px, no-repeat);
+                    @include mixin.background_url('pc/library_library_pc.png', 170px, 77px, no-repeat);
                     bottom: -4.3rem;
                     right: 12rem;
                 }
@@ -346,14 +348,14 @@ main{
                     z-index: 2;
 
                     &::before{
-                        @include background_url('pc/bakai_dog03_pc.png', 115px, 213px, no-repeat);
+                        @include mixin.background_url('pc/bakai_dog03_pc.png', 115px, 213px, no-repeat);
                         top: -4.5rem;
                         left: -9.5rem;
                         z-index: 3;
                     }
 
                     &::after{
-                        @include background_url('pc/library_flower_pc.png', 62px, 42px, no-repeat);
+                        @include mixin.background_url('pc/library_flower_pc.png', 62px, 42px, no-repeat);
                         bottom: -1.4rem;
                         right: -2.7rem;
                         z-index: 3;
@@ -409,7 +411,7 @@ main{
         padding-bottom: 10rem;
 
         &::before{
-            @include background_url('../images/fillter.jpg', 100%, 130px, no-repeat);
+            @include mixin.background_url('../images/fillter.jpg', 100%, 130px, no-repeat);
             position: absolute;
             top: -10rem;
             background-size: cover;
@@ -424,12 +426,12 @@ main{
             border-right: 1px solid #000;
 
             &::before{
-                @include background_url('../images/fillter_top.png', 1200px, 10px, no-repeat);
+                @include mixin.background_url('../images/fillter_top.png', 1200px, 10px, no-repeat);
                 top: -0.7rem;
             }
 
             &::after{
-                @include background_url('../images/fillter_bottom.png', 1200px, 10px, no-repeat);
+                @include mixin.background_url('../images/fillter_bottom.png', 1200px, 10px, no-repeat);
                 bottom: -0.7rem;
             }
 

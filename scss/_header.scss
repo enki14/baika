@@ -1,3 +1,5 @@
+@use "mixin";
+
 header{
 
     .small_link{
@@ -48,7 +50,7 @@ header{
                 
             }
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 185px;
 
                 .baikaLogo_2{
@@ -151,7 +153,7 @@ header{
                     }
                 }
 
-                @include mq(tab){
+                @include mixin.mq(tab){
                     #gnav01,
                     #gnav02{
                         width: 98px;
@@ -172,7 +174,7 @@ header{
                     width: 180px;
                     text-align: center;
 
-                    @include mq(pc){
+                    @include mixin.mq(pc){
                         width: 130px;
                     }
                     

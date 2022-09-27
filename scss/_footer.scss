@@ -1,3 +1,5 @@
+@use "mixin";
+
 footer{
     border-top: 1px dotted #333;
 
@@ -41,7 +43,7 @@ footer{
                 right: -60rem;
                 top: -8rem;
 
-                @include mq(sp){
+                @include mixin.mq(sp){
                     right: -55rem;
                 }
             }
@@ -96,7 +98,7 @@ footer{
                     margin: 0rem 0.5rem 0 0;
                     font-size: 1.3rem;
                     
-                    @include clearfix();
+                    @include mixin.clearfix();
 
                     ul{
                         list-style: none;
@@ -196,7 +198,7 @@ footer{
                             border-right: 1px dotted #fff;
 
                             &::after{
-                                @include background_url('../images/blank_w.png', 10px, 13px, no-repeat);
+                                @include mixin.background_url('../images/blank_w.png', 10px, 13px, no-repeat);
                                 top: 0.5rem;
                                 right: 1.5rem;
                             }
